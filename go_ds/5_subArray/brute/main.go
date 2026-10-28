@@ -1,8 +1,9 @@
+// PS P:\DSA\go_ds\5_subArray\main.go
 package main
 
 import "fmt"
 
-// func maxSubArray_brute(nums []int) (int[],int) {
+// func maxSubArray_brute(nums []int) ([]int, int) {
 func maxSubArray_brute(nums []int) int {
 	// max := 0
 	res := nums[0]
@@ -21,6 +22,7 @@ func maxSubArray_brute(nums []int) int {
 		}
 
 	}
+	// return resArr, res
 	return res
 }
 
