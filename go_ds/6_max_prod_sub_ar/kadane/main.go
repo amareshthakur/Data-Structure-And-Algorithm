@@ -7,13 +7,8 @@ func maxProduct(nums []int) int {
 	curMin, curMax := 1, 1
 	for i := 0; i < len(nums); i++ {
 		temp := curMax * nums[i]
-		// fmt.Println("i=", i)
-		// fmt.Println("temp -> ", temp, "\tnums[", i, "]", nums[i], "\tcurrMax", curMax)
-		// fmt.Println("nums[i]*curMax", nums[i]*curMax, "\tnums[i]*curMin", nums[i]*curMin)
-		curMax = max(nums[i]*curMax, max(nums[i]*curMin, nums[i]))
-		// fmt.Println("temp", temp, "\tnums[i]*curMin", nums[i]*curMin)
+		curMax = max(temp, max(nums[i]*curMin, nums[i]))
 		curMin = min(temp, min(nums[i]*curMin, nums[i]))
-		// fmt.Println("max(res, curMax)", res, "\t", curMax)
 		res = max(res, curMax)
 	}
 	return res
